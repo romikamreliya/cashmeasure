@@ -1,0 +1,36 @@
+    
+    <%- include('./ads/adx_ads_02') %> 
+</main>
+<footer class="bg-[#fff] border-t-2">
+    <div class="container mx-auto 2xl:px-[128px]">
+        <div class="flex justify-between flex-col-reverse lg:flex-row gap-4 py-5">
+            <div class="text-center lg:text-left">Copyright 2023 © Cashmeasure.com</div>
+            <div>
+                <ul class="flex justify-center lg:justify-end flex-col sm:flex-row gap-4 sm:gap-1">
+                    <li class="px-3 text-center"><a href="/about-us">About US</a></li>
+                    <li class="px-3 text-center"><a href="/disclaimer">Disclaimer</a></li>
+                    <li class="px-3 text-center"><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li class="px-3 text-center"><a href="/contact-us">Contact US</a></li>
+                    <li class="px-3 text-center"><a href="/sitemap.xml">sitemap</a></li>
+                    <li class="m-auto">
+                        <a href="//www.dmca.com/Protection/Status.aspx?ID=1b03720d-9f36-4cd9-8ce3-391a8b65736f" title="DMCA.com Protection Status" class="dmca-badge" target="_blank"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-02.png?ID=1b03720d-9f36-4cd9-8ce3-391a8b65736f"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    let parts = window.location.pathname.split('/').at(-1);
+    parts = `nav${parts?parts:'mainhome'}`;
+    jQuery(`.${parts}`).addClass('navmanuactive');
+
+    jQuery('label[for="my-drawer-3"]').on('click', function () {
+        jQuery(".drawer-side-manu").toggleClass("!opacity-100");
+        jQuery(".drawer-wrapper").toggleClass("left-[15px]");
+    })
+</script>
+
+</body>
+
+</html>

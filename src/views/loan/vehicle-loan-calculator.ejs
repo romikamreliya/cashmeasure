@@ -1,0 +1,150 @@
+<%- include('../header',{
+    title:`Estimate Your Vehicle Loan with CashMeasure's Vehicle Loan Calculator`,
+    description:`Plan your vehicle loan confidently using CashMeasure's Vehicle Loan Calculator. Calculate your monthly payments and make informed decisions for your next vehicle purchase`,
+    keyword:'Vehicle Loan calculator',
+    url:'/loan/vehicle-loan-calculator',
+    other:{
+        tags:['Vehicle Loan calculator','Loan Calculator']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">Vehicle Loan calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">How a Vehicle Loan calculator Can Help You Make Informed Financial Decisions.</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-2 lg:gap-10">
+            <div class="col-span-2 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10">
+                <div class="mb-10">
+                    <div class="flex flex-col min-[320px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Loan Amount</div>
+                        <div class="relative my-auto">
+                            <input type="NUMBER" name="loanamount" id="loanamount" value="800000" step="10000" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <input type="range" min="100000" max="1200000" step="10000" value="800000" class="changeresult range range-sm w-full rangeselecter"/>
+                </div>
+                <div class="mb-10">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Return of Interest</div>
+                        <div class="relative after:content-['%'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                            <input type="number" min="0" max="20" step="0.1" name="loaninterest" id="loaninterest" value="6.5" class="float-number changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="20" step="0.1" value="6.5" class="changeresult range range-sm w-full rangeselecter" name="interestcounterrange"/>
+                </div>
+                <div class="grid min-[500px]:grid-cols-2 gap-5">
+                    <div class="mb-2">
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                            <div class="text-xl font-semibold my-auto">Loan Tenure</div>
+                            <div class="relative after:content-['Ye'] after:absolute after:top-[12.5px] after:left-[14px] after:font-semibold after:text-[15px] timeperiodafter my-auto">
+                                <input type="number" min="0" max="30" step="1" name="loantenure" id="loantenure" value="15" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full pl-10">
+                            </div>
+                        </div>
+                        <input type="range" min="0" max="30" step="1" value="15" class="changeresult range range-sm w-full rangeselecter" />
+                    </div>
+                    <div class="mb-2">
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                            <div class="text-xl font-semibold my-auto">Fees & Charges</div>
+                            <div class="relative my-auto">
+                                <input type="number" min="0" max="10000" step="100" name="feescharges" id="feescharges" value="0" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full">
+                            </div>
+                        </div>
+                        <input type="range" min="0" max="10000" step="100" value="0" class="changeresult range range-sm w-full rangeselecter" />
+                    </div>
+                </div>
+            </div>
+            <div class="m-auto">
+                <div class="text-center mb-3">
+                    <div class="flex justify-center text-2xl">
+                        <h4>Monthly Pay :</h4>
+                        <h5 class="pl-2 my-auto font-bold" id="tloanprincipal">2,135.42</h5>
+                    </div>
+                </div>
+                <div class="w-full m-auto mb-5 bg-[#fff] shadow-md rounded-2xl py-3">
+                    <table class="text-center w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Loan Amount</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanloanamount">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total Interest</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloaninterest">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Fees & Charges</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanfeescharges">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanpayments">00</td>
+                        </tr>
+                    </table>
+                </div>
+                <canvas id="loancalculator"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>Understanding Vehicle Loans calculator: A Simple Guide and Calculator</h1>
+            <p>Purchasing a vehicle is a significant milestone in life, but it often requires a substantial financial commitment. Vehicle loans, also known as auto loans, can make owning your dream car a reality. In this easy-to-understand guide, we'll break down vehicle loans and provide a simple vehicle loan calculator to help you navigate the world of auto financing.</p>
+            <h2>What is a Vehicle Loan calculator?</h2>
+            <p>A vehicle loan is a type of installment loan used to finance the purchase of a car, truck, motorcycle, or any other type of vehicle. These loans are typically offered by banks, credit unions, online lenders, or even directly from automobile dealerships. Vehicle loans come with specific terms, interest rates, and repayment plans, making it essential to choose the right one that fits your budget and financial goals.</p>
+            <h3>Types of Vehicle Loans</h3>
+            <p>Before diving into the details, let's explore the two primary types of vehicle loans:</p>
+            <h4> 1. New Car Loans:</h4>
+            <p>New car loans are designed for purchasing brand-new vehicles. Lenders may offer competitive interest rates and terms for new cars because they are considered less risky due to their warranty coverage and higher resale value.</p>
+            <h4>2. Used Car Loans:</h4>
+            <p>Used car loans, as the name suggests, are for buying pre-owned vehicles. Interest rates for used car loans may be slightly higher than those for new cars, reflecting the increased risk associated with older vehicles.</p>
+            <h3>How Vehicle Loans Work</h3>
+            <p>Vehicle loans typically work like this:</p>
+            <p><b>1. Loan Application:</b> You apply for a vehicle loan, either through a lender, credit union, or dealership.</p>
+            <p><b>2. Loan Approval:</b> The lender reviews your credit history, income, and other financial factors to determine if you qualify for the loan.</p>
+            <p><b>3. Loan Amount:</b> If approved, the lender specifies the loan amount you're eligible for. This amount can cover the entire vehicle purchase or a portion of it.</p>
+            <p><b>4. Interest Rate:</b> The lender sets an interest rate, which determines the cost of borrowing the money.</p>
+            <p><b>5. Term:</b> The loan term specifies how long you have to repay the loan. Common terms range from 36 to 72 months, but they can vary.</p>
+            <p><b>6. Monthly Payments:</b> Based on the loan amount, interest rate, and term, your lender calculates monthly payments. You'll repay the loan in equal monthly installments over the loan term.</p>
+            <p><b>7. Collateral:</b> The vehicle itself serves as collateral for the loan. If you fail to make payments, the lender can repossess the vehicle.</p>
+            <p><b>8. Full Ownership:</b> Once you've made all the required payments, you become the full owner of the vehicle, and the lender no longer has a claim on it.</p>
+            <%- include('../ads/innerarticleads-01') %>
+            <h3>Benefits of Vehicle Loans</h3>
+            <p>Vehicle loans offer several advantages for those looking to purchase a vehicle:</p>
+            <p><b>Affordability:</b> They allow you to spread the cost of the vehicle over several years, making it more affordable in the short term.</p>
+            <p><b>Ownership:</b> You get to own the vehicle and can use it as you see fit.</p>
+            <p><b>Credit Building:</b> Timely loan payments can help improve your credit score.</p>
+            <p><b>Convenience:</b> Many lenders offer online loan applications and convenient payment options.</p>
+            <h3>Vehicle Loan <a href="https://www.cashmeasure.com/" target="_blank">Calculator</a></h3>
+            <p>Now, let's simplify the process even further with our easy-to-use Vehicle <a href="https://www.cashmeasure.com/loan-calculator" target="_blank">Loan Calculator</a>. This tool will help you estimate your monthly loan payments based on the loan amount, interest rate, and loan term. It's a valuable tool for planning your budget and making informed decisions.</p>
+            <h3>Tips for Getting the Best Vehicle Loan</h3>
+            <p>When seeking a vehicle loan, consider the following tips to secure the best possible terms:</p>
+            <h4>1. Check Your Credit Score:</h4>
+            <p>Before applying for a loan, review your credit report and credit score. A higher credit score can help you qualify for lower interest rates.</p>
+            <h4>2. Shop Around:</h4>
+            <p>Don't settle for the first loan offer you receive. Compare rates and terms from different lenders to find the most favorable deal.</p>
+            <h4>3. Negotiate the Price:</h4>
+            <p>If you're purchasing from a dealership, negotiate the price of the vehicle separately from the loan terms. This can help you secure a better overall deal.</p>
+            <h4>4. Consider the Total Cost:</h4>
+            <p>Look beyond the monthly payment and consider the total cost of the loan over its term. Understand any additional fees or charges.</p>
+            <h4>5. Review Loan Terms:</h4>
+            <p>Read and understand all the loan terms, including interest rates, loan duration, and any prepayment penalties.</p>
+            <h4>6. Save for a Down Payment:</h4>
+            <p>A larger down payment can reduce the loan amount and, in turn, lower your monthly payments.</p>
+            <h4>7. Budget Wisely:</h4>
+            <p>Factor in your monthly loan payment, insurance costs, fuel, and maintenance when creating a budget for your vehicle.</p>
+            <h3>Conclusion</h3>
+            <p>Vehicle loans can help you achieve the freedom and convenience of owning a <a href="https://en.wikipedia.org/wiki/Car_finance" target="_blank">car</a>, but they also come with responsibilities. Understanding the types of loans available, how they work, and the best practices for securing one will help you make informed decisions. With this easy guide and our Vehicle Loan Calculator, you can navigate the world of auto financing with confidence. Remember to consult with financial experts or loan advisors if you have specific questions or need personalized advice. Whether you're buying a new or used vehicle, a vehicle loan can be a valuable tool for making your dream ride a reality.</p>
+        </div>
+    </article>
+</section>
+
+<script src="/js/components/personaloan.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>

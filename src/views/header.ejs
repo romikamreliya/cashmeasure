@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta name="monetag" content="7e37adf082e57690ddf7b0e3b3feb7b2">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <title><%- title %></title>
+    <meta name="description" content="<%- description %>">
+    <meta name="keywords" content="<%- keyword %>, cashmeasure">
+    <link rel="canonical" href="https://www.cashmeasure.com<%- url %>">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="<%- title %>">
+    <% if(other && other.img){ %>
+    <meta property="og:image" content="<%- other.img %>">
+    <% }else{ %>
+    <meta property="og:image" content="https://www.cashmeasure.com/images/logo.png">
+    <% } %>
+    <meta property="og:description" content="<%- description %>">
+    <meta property="og:url" content="https://www.cashmeasure.com<%- url %>">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US.utf-8">
+    <meta property="og:site_name" content="Cash Measure">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@cashmeasure">
+    <meta name="twitter:title" content="<%- title %>">
+    <meta name="twitter:description"content="<%- description %>">
+    <% if(other && other.img){ %>
+    <meta property="twitter:image" content="<%- other.img %>">
+    <% }else{ %>
+    <meta property="twitter:image" content="https://www.cashmeasure.com/images/logo.png">
+    <% } %>
+    <meta name="twitter:url" content="https://www.cashmeasure.com<%- url %>">
+    
+    <meta name='dmca-site-verification' content='YlNEUExQU3F0SGxPUWVoSGFSa29Edz090' />
+    <meta name='dmca-site-verification' content='WnE0cythSE9BTzdYYnRkUXA3VGpoT043TzJkay9tcTI4bzVIY1NFTkhkTT01' />
+    <meta name="clckd" content="b6fe9ad6b0183cdcf04b0a3d4c5a28ab" />
+    <meta name="coinzilla" content="e4c6f74584cc6760107bc76ae8b1c942" />
+
+    <meta name="admverifysite" content="69a58fb6060fcb6d5408a5d83b4f0499" />
+
+    <% if(other && other.tags){ %>
+        <% other.tags.forEach(element => { %>
+            <meta property="article:tag" content="<%- element %>">
+        <% }) %>
+    <% } %>
+    
+    <% if(other && other.html){ %>
+        <%- other.html %>
+    <% } %>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "url": "https://www.cashmeasure.com<%- url %>",
+            "wordCount": "",
+            "mainEntityOfPage": {
+                "@type": "Webpage",
+                "@id": "https://google.com/article"
+            },
+            "headline": "<%- title %>",
+            "description": "<%- description %>",
+            "identifier": "<%- url %>",
+            "image": {
+                "@type": "ImageObject",
+                <% if(other && other.img){ %>
+                "url": "<%- other.img %>",
+                <% }else{ %>
+                "url": "https://www.cashmeasure.com/images/logo.png",
+                <% } %>
+                "width": "457px",
+                "height": "187px"
+            },
+            "datePublished": "2023-10-14T22:55:00+05:30",
+            "dateModified": "2023-11-01T18:11:00+05:30",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Cashmeasure",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.cashmeasure.com/images/favicon.png",
+                    "width": "126",
+                    "height": "126"
+                }
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Romik",
+                "identifier": "854625321"
+            },
+            "genre": "Finance Calculator"
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="/css/output.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" rel="preload" as="script"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js" rel="preload" as="script"></script>
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navmanuactive{
+            background: #f3f4f6;
+            padding: 7px 17px;
+            border-radius: 23px;
+            border: 1px solid #c5c5c5 !important;
+        }
+        .navmanu{
+            padding: 7px 17px;
+            border-radius: 23px !important;
+            border: 1px solid #ff000000;
+        }
+        .navmanu:hover,.navmanu:focus,.navmanu:active{
+            background: #f3f4f6;
+            border-radius: 23px;
+        }
+        .navsubmanu:has(ul li .navmanuactive) .navmanu{
+            border: 1px solid #c5c5c5 !important;
+            background: #f3f4f6;
+            border-radius: 23px;
+        }
+
+        .navsubmanu:has(.collapse-content ul li .navmanuactive) .collapse-content ul{
+            margin-top: 8px;
+        }
+        .navsubmanu:has(.collapse-content ul li .navmanuactive) .collapse-content{
+            visibility: visible;
+            min-height: auto;
+        }
+
+        .converttosystem{
+            color: rgb(175 175 175);
+        }
+
+        #hd-drawer{
+            width: 100% !important;
+        }
+    </style>
+
+</head>
+
+<body class="bg-[#f8f8f8]">
+    <header class="bg-[#fff] border-b-2">
+        <div class="container mx-auto 2xl:px-[128px]">
+            <div class="drawer">
+                <div class="drawer-content flex flex-col">
+                    <div class="w-full navbar flex-row-reverse lg:flex-row">
+                        <div class="flex-none lg:hidden">
+                            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="flex-1 px-2 mx-2">
+                            <a href="/"><img class="block w-[130px]" src="/images/logo.png" alt="logo" load="lazy"></a>
+                        </div>
+                        <div class="flex-none hidden lg:block">
+                            <ul class="menu menu-horizontal text-base gap-2">
+                                <li class="m-auto"><a href="/" class="text-[#1f2937] navmanu navmainhome">SIP Calculator</a></li>
+                                <li class="dropdown dropdown-hover navsubmanu m-auto">
+                                    <label tabindex="0" class="navmanu">Loan</label>
+                                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60 right-[-100%]">
+                                        <li><a href="/loan-calculator" class="navloan-calculator">Loan Calculator</a></li>
+                                        <li><a href="/loan/emi-calculator" class="navemi-calculator">EMI Calculator</a></li>
+                                        <li><a href="/loan/car-loan-calculator" class="navcar-loan-calculator">Car Loan Calculator</a></li>
+                                        <li><a href="/loan/home-loan-calculator" class="navhome-loan-calculator">Home Loan Calculator</a></li>
+                                        <li><a href="/loan/personal-loan-calculator" class="navpersonal-loan-calculator">Personal Loan Calculator</a></li>
+                                        <li><a href="/loan/vehicle-loan-calculator" class="navvehicle-loan-calculator">Vehicle Loan Calculator</a></li>
+                                        <li><a href="/loan/student-loan-calculator" class="navstudent-loan-calculator">Student Loan Calculator</a></li>
+                                        <li><a href="/loan/business-loan-calculator" class="navbusiness-loan-calculator">Business Loan Calculator</a></li>
+                                        <li><a href="/loan/fintechzoom-loan-calculator" class="navfintechzoom-loan-calculator">Fintechzoom Loan Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-hover navsubmanu m-auto">
+                                    <label tabindex="0" class="navmanu">Stock</label>
+                                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60 right-[-100%]">
+                                        <li><a href="/stock/stock-profit-calculator" class="navstock-profit-calculator">Stock Profit Calculator</a></li>
+                                        <li><a href="/stock-average-calculator" class="navstock-average-calculator">Stock Average Calculator</a></li>
+                                        <li><a href="/stock/stock-split-calculator" class="navstock-split-calculator">Stock Split Calculator</a></li>
+                                        <li><a href="/stock/stock-dividend-calculator" class="navstock-dividend-calculator">Stock Dividend Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-hover navsubmanu m-auto">
+                                    <label tabindex="0" class="navmanu">Other</label>
+                                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60 right-[-100%]">
+                                        <li><a href="/step-up-sip-calculatorn" class="navstep-up-sip-calculatorn">Step-Up SIP Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li class="m-auto"><a href="/blog" class="text-[#1f2937] navmanu navblog">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-side z-10">
+                    <label for="my-drawer-3" class="drawer-side-manu drawer-overlay !bg-[#00000017] backdrop-blur-sm opacity-0 !transition-all !ease-in !duration-[500ms]"></label>
+                    <div class="drawer-wrapper fixed top-[15px] bottom-[15px] bg-[#fff] w-[calc(100%-30px)] min-[375px]:w-80 rounded-3xl shadow-lg overflow-y-scroll">
+                        <div class="p-5 mt-4">
+                            <label for="my-drawer-3" class="absolute top-[13px] right-[13px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ml-auto">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </label>
+                            <div class="mb-5">
+                                <img class="block w-[130px]"
+                                    src="/images/logo.png"
+                                    alt="logo">
+                            </div>
+                            <div>
+                                <p class="text-sm">Discover the most outstanding articles on all topics of life. Write your stories and share them</p>
+                            </div>
+                        </div>
+                        <ul class="p-4 border-[#f3f4f6] border-t-2">
+                            <li class="py-1.5 px-2 mb-1 navmanu navmainhome"><a href="/" class="text-[#1f2937]">SIP Calculator</a></li>
+                            <li class="py-1.5 px-2 mb-1 navmanu">
+                                <div class="collapse rounded-none navsubmanu">
+                                    <input type="checkbox" class="min-h-[26px]"/> 
+                                    <div class="text-[#1f2937] collapse-title !p-0 min-h-[26px]">Loan</div>
+                                    <div class="collapse-content !p-0"> 
+                                        <ul class="menu p-0">
+                                            <li><a href="/loan-calculator" class="text-[#1f2937] navloan-calculator">Loan Calculator</a></li>
+                                            <li><a href="/loan/emi-calculator" class="text-[#1f2937] navemi-calculator">EMI Calculator</a></li>
+                                            <li><a href="/loan/car-loan-calculator" class="text-[#1f2937] navcar-loan-calculator">Car Loan Calculator</a></li>
+                                            <li><a href="/loan/home-loan-calculator" class="text-[#1f2937] navhome-loan-calculator">Home Loan Calculator</a></li>
+                                            <li><a href="/loan/personal-loan-calculator" class="text-[#1f2937] navpersonal-loan-calculator">Personal Loan Calculator</a></li>
+                                            <li><a href="/loan/vehicle-loan-calculator" class="text-[#1f2937] navvehicle-loan-calculator">Vehicle Loan Calculator</a></li>
+                                            <li><a href="/loan/student-loan-calculator" class="text-[#1f2937] navstudent-loan-calculator">Student Loan Calculator</a></li>
+                                            <li><a href="/loan/business-loan-calculator" class="text-[#1f2937] navbusiness-loan-calculator">Business Loan Calculator</a></li>
+                                            <li><a href="/loan/fintechzoom-loan-calculator" class="text-[#1f2937] navfintechzoom-loan-calculator">Fintechzoom Loan Calculator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-1.5 px-2 mb-1 navmanu">
+                                <div class="collapse rounded-none navsubmanu">
+                                    <input type="checkbox" class="min-h-[26px]"/> 
+                                    <div class="text-[#1f2937] collapse-title !p-0 min-h-[26px]">Stock</div>
+                                    <div class="collapse-content !p-0"> 
+                                        <ul class="menu p-0">
+                                            <li><a href="/stock/stock-profit-calculator" class=" text-[#1f2937] navstock-profit-calculator">Stock Profit Calculator</a></li>
+                                            <li><a href="/stock-average-calculator" class="text-[#1f2937] navstock-average-calculator">Stock Average Calculator</a></li>
+                                            <li><a href="/stock/stock-split-calculator" class="text-[#1f2937] navstock-split-calculator">Stock Split Calculator</a></li>
+                                            <li><a href="/stock/stock-dividend-calculator" class="text-[#1f2937] navstock-dividend-calculator">Stock Dividend Calculator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-1.5 px-2 mb-1 navmanu">
+                                <div class="collapse rounded-none navsubmanu">
+                                    <input type="checkbox" class="min-h-[26px]"/> 
+                                    <div class="text-[#1f2937] collapse-title !p-0 min-h-[26px]">Other</div>
+                                    <div class="collapse-content !p-0"> 
+                                        <ul class="menu p-0">
+                                            <li><a href="/step-up-sip-calculatorn" class="text-[#1f2937] navstep-up-sip-calculatorn">Step-Up SIP Calculator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-1.5 px-2 mb-1 navmanu navblog"><a href="/blog" class="text-[#1f2937]">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <%- include('./ads/adx_ads_01') %>

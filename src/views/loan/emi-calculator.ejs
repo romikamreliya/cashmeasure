@@ -1,0 +1,153 @@
+<%- include('../header',{
+    title:'EMI Calculator: Accurate and Instant Equated Monthly Installment Computation',
+    description:'Experience the ultimate convenience in financial planning with our EMI Calculator.',
+    keyword:'EMI calculator',
+    url:'/loan/emi-calculator',
+    other:{
+        tags:['EMI calculator','Loan Calculator']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">EMI Calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">Experience the ultimate convenience in financial planning with our EMI Calculator.</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-2 lg:gap-10">
+            <div class="col-span-2 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10">
+                <div class="mb-10">
+                    <div class="flex flex-col min-[320px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">EMI Amount</div>
+                        <div class="relative my-auto">
+                            <input type="NUMBER" name="loanamount" id="loanamount" value="50000" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <input type="range" min="1000" max="500000" step="1000" value="50000" class="changeresult range range-sm w-full rangeselecter"/>
+                </div>
+                <div class="mb-10">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Return of Interest</div>
+                        <div class="relative after:content-['%'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                            <input type="number" min="0" max="100" step="0.1" name="loaninterest" id="loaninterest" value="9" class="float-number changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="25" step="0.5" value="9" class="changeresult range range-sm w-full rangeselecter" name="interestcounterrange"/>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="mb-2">
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                            <div class="text-xl font-semibold my-auto">Tenure Month</div>
+                            <div class="relative after:content-['Mo'] after:absolute after:top-[12.5px] after:left-[14px] after:font-semibold after:text-[15px] timeperiodafter my-auto">
+                                <input type="number" min="0" max="8" step="1" name="loantenure" id="loantenure" value="10" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full pl-10">
+                            </div>
+                        </div>
+                        <input type="range" min="0" max="40" step="1" value="10" class="changeresult range range-sm w-full rangeselecter" />
+                    </div>
+                    <div class="mb-2">
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                            <div class="text-xl font-semibold my-auto">Fees & Charges</div>
+                            <div class="relative my-auto">
+                                <input type="number" min="0" max="8" step="100" name="feescharges" id="feescharges" value="0" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full ">
+                            </div>
+                        </div>
+                        <input type="range" min="0" max="5000" step="50" value="0" class="changeresult range range-sm w-full rangeselecter" />
+                    </div>
+                </div>
+            </div>
+            <div class="m-auto">
+                <div class="w-full m-auto mb-5 bg-[#fff] shadow-md rounded-2xl py-3">
+                    <table class="text-center w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>EMI Amount</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanemiamount">50,000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Month Playment</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanprincipal">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total Interest</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloaninterest">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Fees & Charges</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanfeescharges">0</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanpayments">00</td>
+                        </tr>
+                    </table>
+                </div>
+                <canvas id="loancalculator"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>The EMI Calculator: Your Essential Financial Companion</h1>
+            <p>Are you considering taking out a <a href="https://www.cashmeasure.com/loan-calculator" target="_blank">loan</a> for that dream home, a new car, or perhaps an investment opportunity? The world of financial decisions can often feel complex and overwhelming, but with our EMI Calculator, you can now navigate these choices with ease and confidence.</p>
+            <div>
+                <h2>What is an EMI Calculator?</h2>
+                <p>An EMI (Equated Monthly Installment) Calculator is a powerful tool designed to simplify your financial planning process. It takes into account crucial factors such as loan amount, interest rate, and loan tenure to provide you with an accurate estimation of your monthly repayment amount. Whether you're planning for a personal loan, home loan, or any other kind of installment-based payment, this tool is your guiding light.</p>
+                <h4>Key Features and Benefits</h4>
+                <ol>
+                    <li>
+                        <h5>Instant Clarity:</h5>
+                        <p>Our EMI Calculator works its magic within seconds. No more complicated spreadsheets or manual calculations. Get precise numbers instantly, empowering you to make informed decisions on the spot.</p>
+                    </li>
+                    <li>
+                        <h5>Budget Management:</h5>
+                        <p>Understanding how much you'll need to pay every month helps you manage your budget more effectively. The EMI Calculator ensures that you're fully aware of your financial commitment and can plan your expenses accordingly.</p>
+                    </li>
+                    <li>
+                        <h5>Variability Exploration:</h5>
+                        <p>Wondering how adjusting the loan amount, interest rate, or tenure can impact your <a href="https://en.wikipedia.org/wiki/EMI" target="_blank">EMIs</a>? The calculator allows you to experiment with these variables, giving you a comprehensive view of your options and helping you tailor the loan to your needs.</p>
+                    </li>
+                    <li>
+                        <h5>Avoid Surprises:</h5>
+                        <p>Imagine the peace of mind in knowing exactly what you're signing up for. No hidden surprises or unexpected spikes in payments. The EMI Calculator equips you with transparency, allowing you to plan for the long term.</p>
+                    </li>
+                </ol>
+            </div>
+            <%- include('../ads/innerarticleads-01') %>
+            <div>
+                <h3>How to Use the EMI Calculator</h3>
+                <p>Using our EMI Calculator couldn't be simpler :</p>
+                <ol>
+                    <li>
+                        <h4>Enter Loan Amount :</h4>
+                        <p>Input the amount you plan to borrow.</p>
+                    </li>
+                    <li>
+                        <h4>Interest Rate :</h4>
+                        <p>Key in the applicable interest rate.</p>
+                    </li>
+                    <li>
+                        <h4>Loan Tenure :</h4>
+                        <p>Specify the duration over which you'll repay the loan.</p>
+                    </li>
+                    <li>
+                        <h4>Instant Result :</h4>
+                        <p>With the click of a button, your Equated Monthly Installment is calculated and displayed.</p>
+                    </li>
+                </ol>
+                <p>Empower Your Financial Decisions</p>
+            </div>
+            <p>At Cashmeasure, we understand that every financial decision you make is significant. Whether you're taking a step towards homeownership, acquiring a vehicle, or investing in your future, the EMI Calculator is your dependable ally. It empowers you to make choices that align with your budget and aspirations, all while giving you the confidence to tread the path of financial responsibility.</p>
+            <p>Stop second-guessing and start strategizing with the EMI Calculator. Take control of your financial journey today, and ensure that every step is paved with clarity, precision, and sound decision-making. Experience the future of financial planning – experience the power of the EMI Calculator.</p>
+        </div>
+    </article>
+</section>
+
+<script src="/js/components/emimain.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>

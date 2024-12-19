@@ -1,0 +1,137 @@
+<%- include('../header',{
+    title:'Home Loan Calculator: Plan Your Property Dreams with Precision',
+    description:'Home Loan Calculator to estimate your monthly mortgage payments. Explore various home financing scenarios and make informed decisions about your real estate investments',
+    keyword:'home loan calculator',
+    url:'/loan/home-loan-calculator',
+    other:{
+        tags:['home loan calculator','Loan Calculator']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">Home Loan Calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">Navigate the path to homeownership confidently using the Home Loan Calculator.</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-2 lg:gap-10">
+            <div class="col-span-2 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10">
+                <div class="mb-10">
+                    <div class="flex flex-col min-[320px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Loan Amount</div>
+                        <div class="relative my-auto">
+                            <input type="NUMBER" name="loanamount" id="loanamount" value="1000000" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <input type="range" min="100000" max="1000000000" step="1000" value="10000000" class="changeresult range range-sm w-full rangeselecter"/>
+                </div>
+                <div class="mb-10">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Return of Interest</div>
+                        <div class="relative after:content-['%'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                            <input type="number" min="0" max="100" step="0.1" name="loaninterest" id="loaninterest" value="7.5" class="float-number changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="25" step="0.5" value="7.5" class="changeresult range range-sm w-full rangeselecter" name="interestcounterrange"/>
+                </div>
+                <div class="mb-2">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Loan Tenure</div>
+                        <div class="relative after:content-['Ye'] after:absolute after:top-[12.5px] after:left-[14px] after:font-semibold after:text-[15px] timeperiodafter my-auto">
+                            <input type="number" min="0" max="45" step="1" name="loantenure" id="loantenure" value="15" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="45" step="1" value="15" class="changeresult range range-sm w-full rangeselecter" />
+                </div>
+            </div>
+            <div class="m-auto">
+                <div class="w-full m-auto mb-5 bg-[#fff] shadow-md rounded-2xl py-3">
+                    <table class="text-center w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Loan Amount</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanloanamount">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Month Playment</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanprincipal">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total Interest</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloaninterest">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanpayments">00</td>
+                        </tr>
+                    </table>
+                </div>
+                <canvas id="loancalculator"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>Understanding Home Loans Calculator: A Simple Guide and Calculator</h1>
+            <p>Buying a home is a significant milestone in life, but it often requires a substantial financial commitment. Home loans, also known as mortgages, can make homeownership a reality. In this easy-to-understand guide, we'll break down home loans and provide a simple home <a href="https://www.cashmeasure.com/loan-calculator" target="_blank">loan calculator</a> to help you navigate the world of real estate financing.</p>
+            <h2>What is a Home Loan Calculator?</h2>
+            <p>A home loan, or mortgage, is a type of loan used to purchase or refinance a residential property. These loans are typically offered by banks, credit unions, or mortgage lenders. Home loans come with specific terms, interest rates, and repayment plans, making it essential to choose the right one that fits your budget and financial goals.</p>
+            <h3>How Home Loans Work</h3>
+            <p>Home loans typically work like this:</p>
+            <h4>1. Loan Application: </h4>
+            <p>You apply for a home loan, providing personal, financial, and property information.</p>
+            <h4>2. Loan Approval:</h4>
+            <p>The lender reviews your application, credit history, and the property's appraisal to determine your eligibility for the loan.</p>
+            <h4>3. Loan Amount:</h4>
+            <p>If approved, the lender specifies the loan amount you're eligible for based on your income and creditworthiness.</p>
+            <h4>4. Interest Rate:</h4>
+            <p>The lender sets an interest rate, which determines the cost of borrowing the money. It can be fixed or variable.</p>
+            <h4>5. Loan Term:</h4>
+            <p>The loan term specifies how long you have to repay the loan. Common terms are 15, 20, or 30 years.</p>
+            <h4>6. Monthly Payments: </h4>
+            <p>Based on the loan amount, interest rate, and term, your lender calculates monthly mortgage payments. You repay the loan in equal monthly installments over the loan term.</p>
+            <h4>7. Collateral: </h4>
+            <p>The property itself serves as collateral for the loan. If you fail to make payments, the lender can foreclose and take possession of the property.</p>
+            <h4>8. Ownership: </h4>
+            <p>You become the full owner of the property once you've made all required payments.</p>
+            <%- include('../ads/innerarticleads-01') %>
+            <h3>Benefits of Home Loans</h3>
+            <p>Home loans offer several advantages for those looking to buy a home:</p>
+            <h5>Affordability:</h5>
+            <p>Home loans allow you to spread the cost of a home over several years, making homeownership more accessible.</p>
+            <h5>Tax Benefits: </h5>
+            <p>Depending on your location, mortgage interest may be tax-deductible.</p>
+            <h5>Equity Building: </h5>
+            <p>Over time, your monthly mortgage payments help you build equity in your home.</p>
+            <h5>Stability :</h5>
+            <p>Fixed-rate mortgages offer predictable monthly payments, making budgeting easier.</p>
+            <h3>Home Loan Calculator</h3>
+            <p>Now, let's simplify the process even further with our easy-to-use Home Loan Calculator. This tool will help you estimate your monthly mortgage payments based on the loan amount, interest rate, and loan term. It's a valuable tool for planning your budget and making informed financial decisions.</p>
+            <h3>Tips for Getting the Best Home Loan</h3>
+            <p>When seeking a home loan, consider the following tips to secure the best possible terms:</p>
+            <h4>1. Check Your Credit Score:</h4>
+            <p>Review your credit report and score before applying. A higher credit score can help you qualify for lower interest rates.</p>
+            <h4>2.Shop Around:</h4>
+            <p>Compare mortgage offers from multiple lenders to find the most favorable terms and rates.</p>
+            <h4>3. Consider Your Budget:</h4>
+            <p>Determine how much you can comfortably afford to borrow and repay each month.</p>
+            <h4>4. Read the Fine Print:</h4>
+            <p>Carefully review the loan terms, including the interest rate, loan duration, and any additional fees.</p>
+            <h4>5. Down Payment:</h4>
+            <p>Save for a down payment, as a larger down payment can result in lower monthly payments and potentially better interest rates.</p>
+            <h4>6. Preapproval:</h4>
+            <p>Consider getting preapproved for a loan before house hunting. Preapproval can strengthen your bargaining position with sellers.</p>
+            <h3>Conclusion</h3>
+            <p>Home loans can make homeownership a reality, but they also come with responsibilities. Understanding the types of loans available, how they work, and the best practices for securing one will help you make informed decisions. With this easy guide and our <a href="https://en.wikipedia.org/wiki/Mortgage" target="_blank">Home Loan</a> Calculator, you can navigate the world of real estate financing with confidence. Remember to consult with mortgage experts or loan advisors if you have specific questions or need personalized advice. Your home is an important investment, and with the right information, you can make it a successful one.</p>
+        </div>
+    </article>
+</section>
+
+<script src="/js/components/carloancalmain.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>

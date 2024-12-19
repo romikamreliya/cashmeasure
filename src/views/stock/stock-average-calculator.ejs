@@ -1,0 +1,238 @@
+<%- include('../header',{
+    title:`Stock Average Calculator: Calculate Your Investment's Average Stock Price`,
+    description:'Easily calculate the average stock price of your investments with our Stock Average Calculator.',
+    keyword:'Stock average calculator',
+    url:'/stock-average-calculator',
+    other:{
+        tags:['Stock average calculator','Stock market average calculator','stock calculator','share calculator','stock market calculator','average price calculator','average calculator shares','stock average down calculator']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">Stock Average Calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">Easily calculate the average stock price of your investments with our Stock Average Calculator.</span>
+        </div>
+        <dialog id="my_modal_3" class="modal">
+            <form method="dialog" class="modal-box">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                <h3 class="font-bold text-lg mb-3">Add Dividend</h3>
+                <div class="grid grid-cols-3">
+                    <label for="Add Dividend" class="my-auto">Dividend</label>
+                    <div class="relative after:content-['₹'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto col-span-2">
+                        <input type="number" name="adddividendprise" value="0" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered pl-10 w-full">
+                    </div>
+                </div>
+            </form>
+        </dialog>
+        <div class="backdrop-blur shadow-lg bg-[#ffffff66] py-8 sm:py-10 lg:py-14 px-5 sm:px-10 rounded-3xl mb-8">
+            <span class="absolute top-[15px] right-[15px]">
+                <button onclick="my_modal_3.showModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.93188 5.38642L5.74952 6.11391L5.93188 5.38642ZM9.30644 3.43812L8.58523 3.2323L9.30644 3.43812ZM3.23837 10.0517L3.77722 9.53005L3.23837 10.0517ZM3.23837 13.9483L2.69952 13.4266H2.69952L3.23837 13.9483ZM5.93188 18.6136L6.11423 19.3411L5.93188 18.6136ZM9.30644 20.5619L8.58523 20.7677L9.30644 20.5619ZM14.6935 20.5619L15.4147 20.7677L14.6935 20.5619ZM18.068 18.6136L18.2504 17.8861L18.068 18.6136ZM20.7615 13.9483L20.2227 14.47V14.47L20.7615 13.9483ZM20.7615 10.0517L20.2227 9.53005V9.53005L20.7615 10.0517ZM18.068 5.38642L17.8857 4.65893L18.068 5.38642ZM14.6935 3.43812L15.4147 3.2323L14.6935 3.43812ZM5.74952 6.11391C7.60843 6.57987 9.50172 5.48678 10.0276 3.64394L8.58523 3.2323C8.28146 4.2967 7.18792 4.92806 6.11423 4.65893L5.74952 6.11391ZM3.77722 9.53005C2.34195 8.04752 3.74798 5.6122 5.74952 6.11391L6.11423 4.65893C2.6489 3.7903 0.214599 8.00664 2.69952 10.5734L3.77722 9.53005ZM3.77722 14.47C5.1102 13.0931 5.1102 10.9069 3.77722 9.53005L2.69952 10.5734C3.46944 11.3687 3.46944 12.6314 2.69952 13.4266L3.77722 14.47ZM5.74952 17.8861C3.74798 18.3878 2.34195 15.9525 3.77722 14.47L2.69952 13.4266C0.214598 15.9934 2.6489 20.2097 6.11423 19.3411L5.74952 17.8861ZM10.0276 20.3561C9.50172 18.5133 7.60843 17.4202 5.74952 17.8861L6.11423 19.3411C7.18792 19.072 8.28146 19.7033 8.58523 20.7677L10.0276 20.3561ZM13.9722 20.3561C13.406 22.3403 10.5939 22.3403 10.0276 20.3561L8.58523 20.7677C9.56564 24.2031 14.4342 24.2031 15.4147 20.7677L13.9722 20.3561ZM18.2504 17.8861C16.3915 17.4202 14.4982 18.5133 13.9722 20.3561L15.4147 20.7677C15.7184 19.7033 16.812 19.072 17.8857 19.3411L18.2504 17.8861ZM20.2227 14.47C21.6579 15.9525 20.2519 18.3878 18.2504 17.8861L17.8857 19.3411C21.351 20.2097 23.7853 15.9934 21.3004 13.4266L20.2227 14.47ZM20.2227 9.53005C18.8897 10.9069 18.8897 13.0931 20.2227 14.47L21.3004 13.4266C20.5305 12.6314 20.5305 11.3687 21.3004 10.5734L20.2227 9.53005ZM18.2504 6.11391C20.2519 5.6122 21.6579 8.04752 20.2227 9.53005L21.3004 10.5734C23.7853 8.00664 21.351 3.7903 17.8857 4.65893L18.2504 6.11391ZM13.9722 3.64394C14.4982 5.48678 16.3915 6.57987 18.2504 6.11391L17.8857 4.65893C16.812 4.92806 15.7184 4.2967 15.4147 3.2323L13.9722 3.64394ZM15.4147 3.2323C14.4342 -0.203084 9.56564 -0.203083 8.58523 3.2323L10.0276 3.64394C10.5939 1.6597 13.406 1.6597 13.9722 3.64394L15.4147 3.2323ZM8.24994 12C8.24994 14.0711 9.92888 15.75 11.9999 15.75V14.25C10.7573 14.25 9.74994 13.2427 9.74994 12H8.24994ZM11.9999 15.75C14.071 15.75 15.7499 14.0711 15.7499 12H14.2499C14.2499 13.2427 13.2426 14.25 11.9999 14.25V15.75ZM15.7499 12C15.7499 9.92895 14.071 8.25001 11.9999 8.25001V9.75002C13.2426 9.75002 14.2499 10.7574 14.2499 12H15.7499ZM11.9999 8.25001C9.92888 8.25001 8.24994 9.92895 8.24994 12H9.74994C9.74994 10.7574 10.7573 9.75002 11.9999 9.75002V8.25001Z" fill="#2D264B"/>
+                    </svg>
+                </button>
+            </span>
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-16">
+                <div class="grid gap-3 lg:gap-5">
+                    <div class="text-2xl md:text-3xl font-semibold my-auto text-center">First Buy</div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Share Qty</div>
+                            <div class="my-auto">
+                                <input type="number" name="firstpurchaseunits" value="10" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Price per share</div>
+                            <div class="relative after:content-['₹'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                                <input type="number" name="firstpurchasepricepershare" value="100" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-3 lg:gap-5">
+                    <div class="text-2xl md:text-3xl font-semibold my-auto text-center">Second Buy</div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Share Qty</div>
+                            <div class="my-auto">
+                                <input type="number" name="secondpurchaseunits" value="20" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Price per share</div>
+                            <div class="relative after:content-['₹'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                                <input type="number" name="secondpurchasepricepershare" value="50" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container m-auto py-5 px-5 2xl:px-[128px] mb-8">
+            <div class="flex flex-col md:flex-row gap-y-5 gap-3 lg:gap-5">
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">First Buy</div>
+                    <table class="w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="firstbuyunits">10</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="firstbuypershare">100</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="firstbuytotal">1,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="m-auto text-3xl">+</div>
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">Second Buy</div>
+                    <table class="w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="secondbuyunits">20</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="secondbuypershare">50</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="secondbuytotal">1,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="m-auto text-3xl">=</div>
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">Total</div>
+                    <table class="w-full" id="maintotaltable">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="totalunits">30</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="totalpershare">66.67</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="maintotal">2,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>Average Stock Price Calculator: Determine the Average Price of Your Investments</h1>
+            <p>A stock Average calculator is a tool that helps investors estimate the potential return on investment in the stock market. It takes into account various factors such as the initial investment amount, expected rate of return, dividend yield, and holding period to provide an estimate of the future value of the investment.</p>
+            <div>
+                <h2>Key inputs for a stock market calculator typically include:</h2>
+                <ol>
+                    <li>
+                        <h4>Initial investment amount :</h4>
+                        <p>The amount of money the investor is planning to invest in a particular stock.</p>
+                    </li>
+                    <li>
+                        <h4>Expected rate of return :</h4>
+                        <p>The annual percentage return the investor anticipates from the investment.</p>
+                    </li>
+                    <li>
+                        <h4>Dividend yield :</h4> 
+                        <p>The percentage of a company's stock price that is paid out as dividends over a year.</p>
+                    </li>
+                    <li>
+                        <h4>Holding period :</h4>
+                        <p>The length of time the investor plans to hold the investment.</p>
+                    </li>
+                    <li>
+                        <h4>Inflation rate :</h4>
+                        <p>The expected rate of inflation that can affect the future value of the investment.</p>
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <h3>Using these inputs, a stock market calculator can provide the following outputs:</h3>
+                <ol>
+                    <li>
+                        <h4>Future value of the investment :</h4>
+                        <p>The estimated value of the investment after the holding period, taking into account the expected rate of return and dividend yield.</p>
+                    </li>
+                    <li>
+                        <h4>Total return :</h4>
+                        <p>The percentage increase in the investment value over the holding period, including both capital gains and dividends received.</p>
+                    </li>
+                    <li>
+                        <h4>Annualized return :</h4> 
+                        <p>The average annual percentage return on the investment over the holding period.</p>
+                    </li>
+                    <li>
+                        <h4>Adjusted for inflation :</h4>
+                        <p>The future value of the investment adjusted for the expected rate of inflation.</p>
+                    </li>
+                </ol>
+            </div>
+            <%- include('../ads/innerarticleads-01') %>
+            <p>Many online financial websites and brokerage platforms provide <a href="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average" target="_blank">stock market</a> calculators that can help individual investors make informed investment decisions by analyzing different scenarios and potential A outcomes. stock market calculator is a tool used to help investors analyze and make financial decisions regarding stocks. It typically performs various calculations based on input data such as current stock price, number of shares, investment amount, and expected return.</p>
+            <div>
+                <h4>Here are some common calculations that a stock market calculator can perform:</h4>
+                <ol>
+                    <li>
+                        <h4><a href="https://www.cashmeasure.com/stock/stock-profit-calculator" target="_blank">Stock Profit</a>/Loss Calculation :</h4>
+                        <p>Calculate the total gain or loss on an investment based on the difference between the purchase price and the current price of a stock.</p>
+                    </li>
+                    <li>
+                        <h4>Return on Investment (ROI) <a href="https://www.cashmeasure.com/" target="_blank">Calculation</a> :</h4>
+                        <p>Determine the percentage return on investment by dividing the profit or loss amount by the initial investment amount.</p>
+                    </li>
+                    <li>
+                        <h4>Dividend Yield Calculation :</h4> 
+                        <p>Calculate the annual dividend income of a stock as a percentage of its current stock price.</p>
+                    </li>
+                    <li>
+                        <h4>Price-to-Earnings Ratio (P/E Ratio) Calculation :</h4> 
+                        <p>Calculate the P/E ratio, which is the ratio of a company's stock price to its earnings per share and indicates the market's expectations for its future earnings growth.</p>
+                    </li>
+                    <li>
+                        <h4>Break-Even Point Calculation :</h4> 
+                        <p>Determine the stock price at which an investor will neither gain nor lose money on an investment.</p>
+                    </li>
+                    <li>
+                        <h4>Future Value Calculation :</h4> 
+                        <p>Calculate the future value of an investment by compounding the investment amount over a specified time period at a given interest rate.</p>
+                    </li>
+                    <li>
+                        <h4>Capital Gain Tax Calculation :</h4> 
+                        <p>Calculate the amount of capital gains tax that will be owed on a profitable investment based on the investor's tax bracket and holding period.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </article>
+</section>
+
+<script src="/js/components/stockmarketcalculator.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>

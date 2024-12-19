@@ -1,0 +1,187 @@
+<%- include('../header',{ 
+    title:`Stock Dividend Calculator: Calculate Your Dividend Payouts Easily`, 
+    description:'Use our Stock Dividend Calculator to effortlessly determine your dividend earnings.', 
+    keyword:'Stock Dividend Calculator', 
+    url:'/stock/stock-dividend-calculator', 
+    other:{ 
+        tags:['Stock Dividend Calculator','Share dividend calculator','dividend calculator','how to calculate dividends','dividend yield calculator']
+    } 
+}); %>
+
+    <section>
+        <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+            <div class="mb-5 md:mb-8">
+                <div class="text-2xl min-[375px]:text-4xl font-semibold">Stock Dividend Calculator</div>
+                <span class="mt-6 text-xl text-neutral-400">Use our Stock Dividend Calculator to effortlessly determine your dividend earnings.</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-2 lg:gap-10 mb-5 md:mb-8">
+                <div class="col-span-3 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10 gap-3 lg:gap-5">
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Share Qty</div>
+                        <div class="my-auto">
+                            <input type="number" name="purchaseunits" value="10"
+                                class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[450px]:w-44">
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Price per share</div>
+                        <div class="relative my-auto">
+                            <input type="number" name="purchasepricepershare" value="100"
+                                class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[450px]:w-44">
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Distribution Frequency</div>
+                        <div class="relative my-auto">
+                            <select name="distributionfrequency"
+                                class="changeresult select select-bordered bg-[#f3f4f6] w-full min-[450px]:w-44">
+                                <option value="Annually" selected>Annually</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Monthly">Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Holding Time period (Years)</div>
+                        <div class="relative my-auto">
+                            <input type="number" name="holdingtimeperiod" min="1" max="20" value="1"
+                                class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[450px]:w-44">
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Dividend per share</div>
+                        <div class="relative my-auto w-full min-[450px]:w-44">
+                            <div class="relative rounded-md shadow-sm">
+                                <input type="number" name="dividendpershare" value="10"
+                                    class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full pr-[100px] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                <div class="absolute inset-y-0 right-0 flex items-center">
+                                    <select name="divitype"
+                                        class="changeresult h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm w-[90px] mr-2">
+                                        <option value="amt">Amt</option>
+                                        <option value="per">%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-auto col-span-2 w-full sm:w-[80%] grid gap-5">
+                    <div class="w-full m-auto bg-[#fff] shadow-md rounded-2xl py-3 px-5">
+                        <div class="text-center mb-3 text-xl font-semibold">Share Value</div>
+                        <table class="w-full">
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldshareqty">10</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldpricepershare">100</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Total</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldtotal">1,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="w-full m-auto bg-[#fff] shadow-md rounded-2xl py-3 px-5">
+                        <div class="text-center mb-3 text-xl font-semibold">Dividend Value</div>
+                        <table class="w-full">
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Per share Price</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="newpricepershare">10 ( 10% )</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5">
+                                    <b>Total Dividend</b>
+                                    <span id="newcounty">( 5 Years ) </span>
+                                </td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="newtotal">50</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../ads/8gridads') %>
+    <section>
+        <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+            <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+                <h1>Dividend Payout Calculator for Stocks: Easily Calculate Your Dividend Earnings</h1>
+                <p>Investing in stocks can be a rewarding way to grow your wealth, and one of the many perks of being a shareholder is receiving dividends. Dividends are a portion of a company's earnings distributed to its shareholders as a reward for their investment. To help you better understand and plan your investment strategy, we've developed a user-friendly Stock Dividend Calculator.</p>
+                <div>
+                    <h2>How Does the Stock Dividend Calculator Work?</h2>
+                    <p>Our Stock Dividend Calculator simplifies the process of estimating your dividend payouts. It's a straightforward tool that requires just two pieces of information:</p>
+                    <ol>
+                        <li>
+                            <h4>Number of Shares</h4>
+                            <p>Enter the quantity of shares you own for a particular stock.</p>
+                        </li>
+                        <li>
+                            <h4>Dividend Yield</h4>
+                            <p>Input the current dividend yield for that stock, which represents the annual dividend payment as a percentage of the stock's current market price.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Why Use Our Stock Dividend Calculator?</h3>
+                    <ol>
+                        <li>
+                            <h4>Precision</h4>
+                            <p>Our calculator provides you with accurate estimates of your potential dividend earnings based on your stock holdings and the current dividend yield. No more manual calculations or guesswork.</p>
+                        </li>
+                        <li>
+                            <h4>Quick Insights</h4>
+                            <p>Get a quick snapshot of how much income you can expect from your investments, helping you make informed decisions.</p>
+                        </li>
+                        <li>
+                            <h4>Quick Insights</h4>
+                            <p>Get a quick snapshot of how much income you can expect from your investments, helping you make informed decisions.</p>
+                        </li>
+                        <li>
+                            <h4>Scenario Planning</h4>
+                            <p>Experiment with different scenarios by adjusting the number of shares and dividend yield to see how they impact your potential dividends.</p>
+                        </li>
+                        <li>
+                            <h4>Investment Strategy</h4>
+                            <p>Use the calculator to fine-tune your investment strategy and allocate your resources wisely.</p>
+                        </li>
+                        <li>
+                            <h4>Stay Informed</h4>
+                            <p>Stay updated on your dividend income potential as market conditions change.</p>
+                        </li>
+                    </ol>
+                </div>
+                <%- include('../ads/innerarticleads-01') %>
+                <div>
+                    <h3>How to Use the Stock Dividend Calculator</h3>
+                    <ol>
+                        <li>
+                            <h4>Enter Stock Information</h4>
+                            <p>Input the number of shares you own for a specific stock and the current dividend yield for that stock.</p>
+                        </li>
+                        <li>
+                            <h4>Calculate</h4>
+                            <p>Click the "Calculate" button, and our <a href="https://www.cashmeasure.com/" target="_blank">calculator</a> will instantly provide you with an estimate of your annual dividend income for that stock.</p>
+                        </li>
+                        <li>
+                            <h4>Repeat as Needed</h4>
+                            <p>Feel free to repeat the process for multiple <a href="https://www.cashmeasure.com/stock/stock-profit-calculator" target="_blank">stocks</a> or different scenarios to get a comprehensive view of your dividend income potential.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Start Planning Your Investments Today</h3>
+                    <p>Our <a href="https://en.wikipedia.org/wiki/Dividend" target="_blank">Stock Dividend</a> Calculator is a valuable tool for both new and experienced investors. Whether you're building a dividend-focused portfolio or simply want to keep track of your potential earnings, this calculator can assist you in making informed decisions about your investments.</p>
+                    <p>Take advantage of this easy-to-use tool and gain a clearer understanding of how dividends can contribute to your financial goals. Start using our Stock Dividend Calculator today and empower yourself to make smarter investment choices.</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <script src="/js/components/stockdivimain.js" rel="preload" as="script"></script>
+    <%- include('../footer'); %>

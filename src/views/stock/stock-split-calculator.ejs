@@ -1,0 +1,117 @@
+<%- include('../header',{ 
+    title:`Effortlessly Calculate Stock Split Effects - Stock Split Calculator`, 
+    description:'Use our Stock Split Calculator for instant calculations of adjusted share counts and prices.', 
+    keyword:'Stock Split Calculator', 
+    url:'/stock/stock-split-calculator', 
+    other:{ 
+        tags:['Stock Split Calculator','Stock Split','Split Calculator','split stock calculator','reverse split stock calculator','stock reverse split calculator','calculate a stock split','calculate reverse stock split','calculating reverse stock split','split stock calculator','reverse stock split calculator'] 
+    } 
+}); %>
+
+    <section>
+        <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+            <div class="mb-5 md:mb-8">
+                <div class="text-2xl min-[375px]:text-4xl font-semibold">Stock Split Calculator</div>
+                <span class="mt-6 text-xl text-neutral-400">Make sense of stock splits with our user-friendly Stock Split Calculator.</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-2 lg:gap-10">
+                <div class="col-span-3 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10 gap-3 lg:gap-5">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Share Qty</div>
+                        <div class="my-auto">
+                            <input type="number" name="purchaseunits" value="10" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Price per share</div>
+                        <div class="relative my-auto">
+                            <input type="number" name="purchasepricepershare" value="100" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-xl font-semibold my-auto mb-2">Split Ratio</div>
+                        <div class="flex justify-evenly items-center">
+                            <input type="number" name="splitratioone" value="1" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full">
+                            <span class="mx-1 sm:mx-3 text-3xl">:</span>
+                            <input type="number" name="splitratiotwo" value="2" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full">
+                        </div>
+                    </div>
+                </div>
+                <div class="m-auto col-span-2 w-[80%] grid gap-5">
+                    <div class="w-full m-auto bg-[#fff] shadow-md rounded-2xl py-3 px-5">
+                        <div class="text-center mb-3 text-xl font-semibold">Old</div>
+                        <table class="w-full">
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldshareqty">10</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldpricepershare">100</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Total</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="oldtotal">1,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="w-full m-auto bg-[#fff] shadow-md rounded-2xl py-3 px-5">
+                        <div class="text-center mb-3 text-xl font-semibold">New</div>
+                        <table class="w-full">
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="newshareqty">20</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="newpricepershare">50</td>
+                            </tr>
+                            <tr>
+                                <td class="px-1.5 py-0.5"><b>Total</b></td>
+                                <td>:</td>
+                                <td class="px-1.5 py-0.5 text-center" id="newtotal">1,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../ads/8gridads') %>
+    <section>
+        <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+            <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+                <h1>Easily Determine Stock Split Effects with Stock Split Calculator</h1>
+                <p>Are you an investor who wants to stay ahead of the curve when it comes to <a href="https://www.cashmeasure.com/stock/stock-profit-calculator" target="_blank">stock market</a> dynamics? Understanding the impact of stock splits on your investments is a crucial aspect of making informed decisions. Luckily, our user-friendly Stock Split Calculator is here to simplify the process for you.</p>
+                <div>
+                    <h2>Understanding Stock Split Calculator</h2>
+                    <p>Before we delve into the benefits of our Stock Split <a href="https://www.cashmeasure.com/" target="_blank">Calculator</a>, let's quickly recap what a stock split entails. A stock split happens when a company decides to make more shares from the ones it already has. This division doesn't alter the company's overall market value; instead, it adjusts the number of shares outstanding and the price per share.</p>
+                </div>
+                <div>
+                    <h3>Why Stock Splits Matter</h3>
+                    <p>Stock splits are often carried out to enhance market liquidity, increase accessibility for investors, and adjust the stock's price to a more favorable range. However, as an investor, it's essential to grasp the potential effects of a stock split on your holdings. This is where our Stock Split Calculator becomes an invaluable tool.</p>
+                </div>
+                <%- include('../ads/innerarticleads-01') %>
+                <div>
+                    <h3>Predicting Outcomes with the Stock Split Calculator</h3>
+                    <p>Imagine Company ABC announces a 2-for-1 stock split. You own 100 shares valued at $150 per share before the split. What will be the impact on your investment? Our Stock Split Calculator can provide an instant answer. By inputting the pre-split data, you'll swiftly receive calculations for the adjusted share count and the new price per share. This information helps you make smart choices about your investments.</p>
+                </div>
+                <div>
+                    <h3>Making Informed Investment Decisions</h3>
+                    <p>Evaluating the consequences of a stock split can be complex, especially when considering the potential psychological impact on trading behavior. By using our Stock Split Calculator, you gain a clear picture of how your investment will be affected. This insight enables you to assess whether the split aligns with your investment strategy and risk tolerance.</p>
+                </div>
+                <div>
+                    <h3>Try Our Stock Split Calculator Today</h3>
+                    <p>Ready to take control of your investment decisions? Our Stock Split Calculator offers a hassle-free way to understand the potential outcomes of <a href="https://en.wikipedia.org/wiki/Stock_split" target="_blank">stock splits</a>. Whether you're a seasoned investor or just starting out, this tool equips you with the information you need to navigate the world of stock splits confidently.</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <script src="/js/components/stocksplitmain.js" rel="preload" as="script"></script>
+    <%- include('../footer'); %>

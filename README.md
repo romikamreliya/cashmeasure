@@ -65,7 +65,7 @@ We welcome contributions to improve our calculators and add new features. Please
 
 ## 📄 License
 
-Copyright © 2023 Cash Measure. All rights reserved.
+Copyright © 2024 Cash Measure. All rights reserved.
 
 ## 📞 Contact
 

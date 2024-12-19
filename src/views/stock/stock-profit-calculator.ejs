@@ -1,0 +1,240 @@
+<%- include('../header',{
+    title:`Stock Profit Calculator: Easily Calculate Your Investment Gains`,
+    description:'Calculate your stock market profits effortlessly with our Stock Profit Calculator.',
+    keyword:'Stock Profit Calculator',
+    url:'/stock/stock-profit-calculator',
+    other:{
+        tags:['Stock Profit Calculator','Profit Calculator']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">Stock Profit Calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">Calculate your stock market profits effortlessly with our Stock Profit Calculator.</span>
+        </div>
+        <dialog id="my_modal_3" class="modal">
+            <form method="dialog" class="modal-box">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                <h3 class="font-bold text-lg mb-3">Add Dividend</h3>
+                <div class="grid grid-cols-3">
+                    <label for="Add Dividend" class="my-auto">Dividend</label>
+                    <div class="relative my-auto col-span-2">
+                        <input type="number" name="adddividendprise" value="0" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered pl-10 w-full">
+                    </div>
+                </div>
+            </form>
+        </dialog>
+        <div class="backdrop-blur shadow-lg bg-[#ffffff66] py-8 sm:py-10 lg:py-14 px-5 sm:px-10 rounded-3xl mb-8">
+            <span class="absolute top-[15px] right-[15px]">
+                <button onclick="my_modal_3.showModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.93188 5.38642L5.74952 6.11391L5.93188 5.38642ZM9.30644 3.43812L8.58523 3.2323L9.30644 3.43812ZM3.23837 10.0517L3.77722 9.53005L3.23837 10.0517ZM3.23837 13.9483L2.69952 13.4266H2.69952L3.23837 13.9483ZM5.93188 18.6136L6.11423 19.3411L5.93188 18.6136ZM9.30644 20.5619L8.58523 20.7677L9.30644 20.5619ZM14.6935 20.5619L15.4147 20.7677L14.6935 20.5619ZM18.068 18.6136L18.2504 17.8861L18.068 18.6136ZM20.7615 13.9483L20.2227 14.47V14.47L20.7615 13.9483ZM20.7615 10.0517L20.2227 9.53005V9.53005L20.7615 10.0517ZM18.068 5.38642L17.8857 4.65893L18.068 5.38642ZM14.6935 3.43812L15.4147 3.2323L14.6935 3.43812ZM5.74952 6.11391C7.60843 6.57987 9.50172 5.48678 10.0276 3.64394L8.58523 3.2323C8.28146 4.2967 7.18792 4.92806 6.11423 4.65893L5.74952 6.11391ZM3.77722 9.53005C2.34195 8.04752 3.74798 5.6122 5.74952 6.11391L6.11423 4.65893C2.6489 3.7903 0.214599 8.00664 2.69952 10.5734L3.77722 9.53005ZM3.77722 14.47C5.1102 13.0931 5.1102 10.9069 3.77722 9.53005L2.69952 10.5734C3.46944 11.3687 3.46944 12.6314 2.69952 13.4266L3.77722 14.47ZM5.74952 17.8861C3.74798 18.3878 2.34195 15.9525 3.77722 14.47L2.69952 13.4266C0.214598 15.9934 2.6489 20.2097 6.11423 19.3411L5.74952 17.8861ZM10.0276 20.3561C9.50172 18.5133 7.60843 17.4202 5.74952 17.8861L6.11423 19.3411C7.18792 19.072 8.28146 19.7033 8.58523 20.7677L10.0276 20.3561ZM13.9722 20.3561C13.406 22.3403 10.5939 22.3403 10.0276 20.3561L8.58523 20.7677C9.56564 24.2031 14.4342 24.2031 15.4147 20.7677L13.9722 20.3561ZM18.2504 17.8861C16.3915 17.4202 14.4982 18.5133 13.9722 20.3561L15.4147 20.7677C15.7184 19.7033 16.812 19.072 17.8857 19.3411L18.2504 17.8861ZM20.2227 14.47C21.6579 15.9525 20.2519 18.3878 18.2504 17.8861L17.8857 19.3411C21.351 20.2097 23.7853 15.9934 21.3004 13.4266L20.2227 14.47ZM20.2227 9.53005C18.8897 10.9069 18.8897 13.0931 20.2227 14.47L21.3004 13.4266C20.5305 12.6314 20.5305 11.3687 21.3004 10.5734L20.2227 9.53005ZM18.2504 6.11391C20.2519 5.6122 21.6579 8.04752 20.2227 9.53005L21.3004 10.5734C23.7853 8.00664 21.351 3.7903 17.8857 4.65893L18.2504 6.11391ZM13.9722 3.64394C14.4982 5.48678 16.3915 6.57987 18.2504 6.11391L17.8857 4.65893C16.812 4.92806 15.7184 4.2967 15.4147 3.2323L13.9722 3.64394ZM15.4147 3.2323C14.4342 -0.203084 9.56564 -0.203083 8.58523 3.2323L10.0276 3.64394C10.5939 1.6597 13.406 1.6597 13.9722 3.64394L15.4147 3.2323ZM8.24994 12C8.24994 14.0711 9.92888 15.75 11.9999 15.75V14.25C10.7573 14.25 9.74994 13.2427 9.74994 12H8.24994ZM11.9999 15.75C14.071 15.75 15.7499 14.0711 15.7499 12H14.2499C14.2499 13.2427 13.2426 14.25 11.9999 14.25V15.75ZM15.7499 12C15.7499 9.92895 14.071 8.25001 11.9999 8.25001V9.75002C13.2426 9.75002 14.2499 10.7574 14.2499 12H15.7499ZM11.9999 8.25001C9.92888 8.25001 8.24994 9.92895 8.24994 12H9.74994C9.74994 10.7574 10.7573 9.75002 11.9999 9.75002V8.25001Z" fill="#2D264B"/>
+                    </svg>
+                </button>
+            </span>
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-16">
+                <div class="grid gap-3 lg:gap-5">
+                    <div class="text-2xl md:text-3xl font-semibold my-auto text-center">Buy</div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Share Qty</div>
+                            <div class="my-auto">
+                                <input type="number" name="buyshareqty" value="10" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Price per share</div>
+                            <div class="relative my-auto">
+                                <input type="number" name="buypps" value="100" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Buying Commission</div>
+                        <div class="relative my-auto w-full min-[450px]:w-44">
+                            <div class="relative rounded-md shadow-sm">
+                                <input type="number" name="buycommis" value="20" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full pr-[100px] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                <div class="absolute inset-y-0 right-0 flex items-center">
+                                    <select name="buycommissiontype"
+                                        class="changeresult h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm w-[90px] mr-2">
+                                        <option value="amt">Amt</option>
+                                        <option value="per">%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-3 lg:gap-5">
+                    <div class="text-2xl md:text-3xl font-semibold my-auto text-center">Sell</div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Share Qty</div>
+                            <div class="my-auto">
+                                <input type="number" name="sellsqty" value="10" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between">
+                            <div class="text-xl font-semibold my-auto">Price per share</div>
+                            <div class="relative my-auto">
+                                <input type="number" name="sellpps" value="150" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-[450px]:flex-row gap-1.5 sm:gap-5 justify-between">
+                        <div class="text-xl font-semibold my-auto">Selling Commission</div>
+                        <div class="relative my-auto w-full min-[450px]:w-44">
+                            <div class="relative rounded-md shadow-sm">
+                                <input type="number" name="sellcommission" value="20" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full pr-[100px] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                <div class="absolute inset-y-0 right-0 flex items-center">
+                                    <select name="sellcommissiontype"
+                                        class="changeresult h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm w-[90px] mr-2">
+                                        <option value="amt">Amt</option>
+                                        <option value="per">%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container m-auto py-5 px-5 2xl:px-[80px] mb-8">
+            <div class="flex flex-col md:flex-row gap-y-5 gap-3 lg:gap-5">
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">Buy</div>
+                    <table class="w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tbuyqty">10</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tbuypps">100</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Buying Commission</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tbuycommi">100</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tbuytot">1,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="m-auto text-3xl">+</div>
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">Sell</div>
+                    <table class="w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Share Qty</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tsellqty">20</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Price per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tsellpps">50</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Selling Commission</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tsellcommi">100</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tselltot">1,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="m-auto text-3xl">=</div>
+                <div class="bg-[#fff] shadow-md rounded-2xl p-3 w-full md:w-2/3">
+                    <div class="text-center mb-3 text-xl font-semibold">Profit</div>
+                    <table class="w-full" id="maintotaltable">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Profit</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tprofitqty">30</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Per share</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tprofitpps">66.67</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>All Commission</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tprofitcommi">66.67</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tprofittot">2,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>Investment Gain Calculator for Stocks: Easily Determine Your Profit</h1>
+            <p>nvesting in the stock market can be a lucrative way to grow your wealth over time. However, understanding your investment gains and accurately tracking your profits can sometimes be a challenging task. This is where a Stock Profit Calculator comes to your rescue. In this article, we will delve into the world of stock market investing and how a Stock Profit Calculator can simplify the process of calculating your investment gains.</p>
+            <div>
+                <h2>The Basics of Stock Market Investing</h2>
+                <p>Before we dive into the utility of a Stock Profit Calculator, it's essential to have a basic understanding of stock market investing. When you invest in stocks, you buy a share of ownership in a company. Your goal as an investor is to buy low and sell high, making a profit in the process. Your profits are determined by the difference between the purchase price (cost basis) and the selling price of your stocks.</p>
+            </div>
+            <div>
+                <h3>Why Use a Stock Profit Calculator?</h3>
+                <p>Calculating your investment gains may sound simple in theory, but in practice, it can get quite complex, especially if you have a diversified portfolio with multiple stocks purchased at different times and prices. Here's where a Stock Profit Calculator becomes invaluable:</p>
+                <ol>
+                    <li>
+                        <h4>Accuracy</h4>
+                        <p>A Stock Profit Calculator ensures precise calculations. It considers factors like the number of shares, purchase price, selling price, and any additional costs such as brokerage fees and taxes. This accuracy is crucial for making informed investment decisions.</p>
+                    </li>
+                    <li>
+                        <h4>Time-Saving</h4>
+                        <p>Manually calculating gains for each stock in your portfolio can be time-consuming, especially if you have a sizable investment portfolio. A Stock Profit <a href="https://www.cashmeasure.com/" target="_blank">Calculator</a> automates the process, providing you with quick and efficient results.</p>
+                    </li>
+                    <li>
+                        <h4>Portfolio Analysis</h4>
+                        <p>With a Stock Profit Calculator, you can analyze the performance of your entire investment portfolio. It allows you to see which stocks are generating the most significant returns and which might need reevaluation.</p>
+                    </li>
+                    <li>
+                        <h4>Tax Planning</h4>
+                        <p>Understanding your gains is essential for tax purposes. A <a href="https://en.wikipedia.org/wiki/Stock_market" target="_blank">Stock Profit</a> Calculator helps you calculate capital gains and assess potential tax liabilities accurately.</p>
+                    </li>
+                </ol>
+            </div>
+            <%- include('../ads/innerarticleads-01') %>
+            <div>
+                <h3>How to Use a Stock Profit Calculator</h3>
+                <p>Using a Stock Profit Calculator is typically straightforward:</p>
+                <ol>
+                    <li>Input the number of shares you purchased.</li>
+                    <li>Enter the purchase price per share.</li>
+                    <li>Specify any additional costs like brokerage fees.</li>
+                    <li>Input the selling price per share.</li>
+                    <li>The calculator will provide you with the total profit or loss for that particular investment.</li>
+                    <li>Repeat this process for each <a href="https://www.cashmeasure.com/stock-average-calculator" target="_blank">stock</a> in your portfolio to get a comprehensive view of your overall gains or losses.</li>
+                </ol>
+            </div>
+        </div>
+    </article>
+</section>
+<script src="/js/components/profitmain.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>

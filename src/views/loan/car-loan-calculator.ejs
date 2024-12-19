@@ -1,0 +1,136 @@
+<%- include('../header',{
+    title:'Car Loan Calculator - Estimate Your Auto Loan Payments',
+    description:'Use Cash Measure Car Loan Calculator to quickly calculate your monthly auto loan payments. Get a better understanding of your car financing options with our easy-to-use tool',
+    keyword:'car loan calculator',
+    url:'/loan/car-loan-calculator',
+    other:{
+        tags:['car loan calculator','Loan Calculator','loan calculator for motorcycle']
+    }
+}); %>
+
+<section>
+    <div class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mt-5 sm:mt-10">
+        <div class="mb-5 md:mb-8">
+            <div class="text-2xl min-[375px]:text-4xl font-semibold">Car Loan Calculator</div>
+            <span class="mt-6 text-xl text-neutral-400">Turn your automotive aspirations into reality with the Car Loan Calculator.</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-2 lg:gap-10">
+            <div class="col-span-2 grid bg-[#ffffff66] shadow-lg rounded-3xl backdrop-blur py-8 sm:py-10 lg:py-14 px-5 sm:px-10">
+                <div class="mb-10">
+                    <div class="flex flex-col min-[320px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Loan Amount</div>
+                        <div class="relative my-auto">
+                            <input type="NUMBER" name="loanamount" id="loanamount" value="800000" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44">
+                        </div>
+                    </div>
+                    <input type="range" min="100000" max="10000000" step="1000" value="800000" class="changeresult range range-sm w-full rangeselecter"/>
+                </div>
+                <div class="mb-10">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Return of Interest</div>
+                        <div class="relative after:content-['%'] after:absolute after:top-[8.5px] after:left-[14px] after:font-semibold after:text-[21px] my-auto">
+                            <input type="number" min="0" max="100" step="0.1" name="loaninterest" id="loaninterest" value="7.5" class="float-number changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="25" step="0.5" value="7.5" class="changeresult range range-sm w-full rangeselecter" name="interestcounterrange"/>
+                </div>
+                <div class="mb-2">
+                    <div class="flex flex-col min-[375px]:flex-row gap-2 sm:gap-5 justify-between mb-3">
+                        <div class="text-xl font-semibold my-auto">Loan Tenure</div>
+                        <div class="relative after:content-['Ye'] after:absolute after:top-[12.5px] after:left-[14px] after:font-semibold after:text-[15px] timeperiodafter my-auto">
+                            <input type="number" min="0" max="30" step="1" name="loantenure" id="loantenure" value="15" class="changeresult rangeinput bg-[#f3f4f6] input input-bordered w-full min-[375px]:w-32 sm:w-44 pl-10">
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="30" step="1" value="15" class="changeresult range range-sm w-full rangeselecter" />
+                </div>
+            </div>
+            <div class="m-auto">
+                <div class="w-full m-auto mb-5 bg-[#fff] shadow-md rounded-2xl py-3">
+                    <table class="text-center w-full">
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Loan Amount</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanloanamount">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Month Playment</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanprincipal">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total Interest</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloaninterest">00</td>
+                        </tr>
+                        <tr>
+                            <td class="px-1.5 py-0.5"><b>Total</b></td>
+                            <td>:</td>
+                            <td class="px-1.5 py-0.5" id="tloanpayments">00</td>
+                        </tr>
+                    </table>
+                </div>
+                <canvas id="loancalculator"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../ads/8gridads') %>
+<section>
+    <article class="py-5 md:py-8 container m-auto px-5 2xl:px-[128px] mb-14">
+        <div class="bg-[#fff] py-7 px-7 sm:px-10 shadow-lg rounded-2xl prose m-auto lg:max-w-[90%]">
+            <h1>Car Loan Calculator: Drive Your Dreams with Financial Confidence</h1>
+            <p>A car loan calculator is a tool that helps you estimate the monthly payments and total cost of a car loan based on factors such as the loan amount, interest rate, loan term, and down payment. By entering these details into the calculator, you can get an idea of what your monthly payments will be and how much the loan will cost you over time.</p>
+            <div>
+                <h2>The basic information required for a car <a href="https://www.cashmeasure.com/loan-calculator" target="_blank">loan calculator</a> includes:</h2>
+                <ol>
+                    <li>
+                        <h4>Loan Amount :</h4>
+                        <p>The total amount you need to borrow for purchasing the car.</p>
+                    </li>
+                    <li>
+                        <h4>Interest Rate :</h4>
+                        <p>The annual interest rate charged by the lender.</p>
+                    </li>
+                    <li>
+                        <h4>Loan term :</h4>
+                        <p>The duration or length of the loan in months.</p>
+                    </li>
+                    <li>
+                        <h4>Down Payment :</h4>
+                        <p>The initial amount you can pay as a down payment.</p>
+                    </li>
+                    <li>
+                        <h4>Trade-In Value :</h4>
+                        <p>The value of your current car (if you're trading it in).</p>
+                    </li>
+                    <li>
+                        <h4>Sales Tax Rate :</h4>
+                        <p>The percentage of sales tax applicable to the purchase.</p>
+                    </li>
+                </ol>
+            </div>
+            <%- include('../ads/innerarticleads-01') %>
+            <div>
+                <h3>With these details, the car loan calculator will provide you with:</h3>
+                <ol>
+                    <li>
+                        <h4>Monthly Payment :</h4>
+                        <p>The estimated monthly installment you need to pay towards your <a href="https://en.wikipedia.org/wiki/Car_finance" target="_blank">car loan</a>.</p>
+                    </li>
+                    <li>
+                        <h4>Total Interest :</h4>
+                        <p>The total amount of interest you will pay over the loan term.</p>
+                    </li>
+                    <li>
+                        <h4>Total Cost :</h4>
+                        <p>The total amount you will repay, including the principal loan amount and interest.</p>
+                    </li>
+                </ol>
+            </div>
+            <p>Remember that the results from a car loan calculator are estimates and may not reflect the exact terms and conditions you will receive from a lender. It's always a good idea to shop around for the best loan rates and terms before making a final decision.</p>
+        </div>
+    </article>
+</section>
+
+<script src="/js/components/carloancalmain.js" rel="preload" as="script"></script>
+<%- include('../footer'); %>
