@@ -9,20 +9,20 @@ Cash Measure is a comprehensive financial calculator platform offering various t
 - **Step-Up SIP Calculator**: Analyze investments with increasing periodic contributions
 
 ### Loan Calculators
-- **EMI Calculator**: Calculate Equated Monthly Installments
-- **Car Loan Calculator**: Specific calculations for automobile financing
-- **Home Loan Calculator**: Housing loan calculations with interest breakdowns
-- **Personal Loan Calculator**: General purpose loan calculations
-- **Vehicle Loan Calculator**: Two and four-wheeler loan analysis
-- **Student Loan Calculator**: Education loan planning tool
-- **Business Loan Calculator**: Commercial loan calculations
-- **Fintechzoom Loan Calculator**: Advanced loan analysis tool
+- **[EMI Calculator](https://www.cashmeasure.com/loan/emi-calculator)**: Calculate Equated Monthly Installments
+- **[Car Loan Calculator](https://www.cashmeasure.com/loan/car-loan-calculator)**: Specific calculations for automobile financing
+- **[Home Loan Calculator](https://www.cashmeasure.com/loan/home-loan-calculator)**: Housing loan calculations with interest breakdowns
+- **[Personal Loan Calculator](https://www.cashmeasure.com/loan/personal-loan-calculator)**: General purpose loan calculations
+- **[Vehicle Loan Calculator](https://www.cashmeasure.com/loan/vehicle-loan-calculator)**: Two and four-wheeler loan analysis
+- **[Student Loan Calculator](https://www.cashmeasure.com/loan/student-loan-calculator)**: Education loan planning tool
+- **[Business Loan Calculator](https://www.cashmeasure.com/loan/business-loan-calculator)**: Commercial loan calculations
+- **[Fintechzoom Loan Calculator](https://www.cashmeasure.com/loan/fintechzoom-loan-calculator)**: Advanced loan analysis tool
 
 ### Stock Market Tools
-- **Stock Profit Calculator**: Calculate gains/losses on stock trades
-- **Stock Average Calculator**: Determine average buying price
-- **Stock Split Calculator**: Analyze impact of stock splits
-- **Stock Dividend Calculator**: Calculate dividend returns
+- **[Stock Profit Calculator](https://www.cashmeasure.com/stock/stock-profit-calculator)**: Calculate gains/losses on stock trades
+- **[Stock Average Calculator](https://www.cashmeasure.com/stock-average-calculator)**: Determine average buying price
+- **[Stock Split Calculator](https://www.cashmeasure.com/stock/stock-split-calculator)**: Analyze impact of stock splits
+- **[Stock Dividend Calculator](https://www.cashmeasure.com/stock/stock-dividend-calculator)**: Calculate dividend returns
 
 ## 💻 Technology Stack
 
