@@ -129,6 +129,9 @@ Router.get('/blog/how-to-write-an-effective-financing-statement', (req, res) => 
 Router.get('/blog/calculate-your-success-the-ultimate-commercial-loan-calculator', (req, res) => {
     return res.render('blog/calculate-your-success-the-ultimate-commercial-loan-calculator');
 })
+Router.get('/blog/fintechzoom-dax40-guide-how-to-start-trading-dax', (req, res) => {
+    return res.render('blog/fintechzoom-dax40-guide-how-to-start-trading-dax');
+})
 
 // web page
 Router.get('/about-us', (req, res) => {
