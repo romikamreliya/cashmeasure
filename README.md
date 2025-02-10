@@ -24,6 +24,10 @@ Cash Measure is a comprehensive financial calculator platform offering various t
 - **[Stock Split Calculator](https://www.cashmeasure.com/stock/stock-split-calculator)**: Analyze impact of stock splits
 - **[Stock Dividend Calculator](https://www.cashmeasure.com/stock/stock-dividend-calculator)**: Calculate dividend returns
 
+### Blogs
+- **[Fintechzoom DAX40](https://www.cashmeasure.com/blog/fintechzoom-dax40-guide-how-to-start-trading-dax)**: How to Start Trading DAX
+
+
 ## 💻 Technology Stack
 
 - Frontend: HTML, CSS (Tailwind CSS), JavaScript
